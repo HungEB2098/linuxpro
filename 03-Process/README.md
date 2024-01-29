@@ -47,9 +47,13 @@ Viết một chương trình A tạo ra một tiến trình con B, in ra P
     stop.  This macro should be employed only if WIFSTOPPED
     returned true.
 
-WIFCONTINUED(wstatus)
+## WIFCONTINUED(wstatus)
     (since Linux 2.6.10) returns true if the child process was
     resumed by delivery of SIGCONT.
 
 # Exercise 7. 
 Từ kiến thức đã học, sử dụng SIGCHLD để ngăn ngừa việc hình thành zombie process.
+
+## Zombie process
+    Zombie process xuất hiện khi tiến trình con kết thúc trước tiến trình cha, nhưng tiến trình cha không thu thập thông tin về kết thúc của tiến trình con đó. Khi một tiến trình con kết thúc, thông tin kết thúc của nó (ví dụ: mã trạng thái) được lưu trữ trong bảng điều khiển tiến trình. Nhưng nếu tiến trình cha không gọi wait() hoặc waitpid() để thu thập thông tin này, bản ghi của tiến trình con vẫn tồn tại trong bảng điều khiển tiến trình dưới dạng zombie.
+    
