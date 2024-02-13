@@ -24,7 +24,8 @@ Các đối số:
     int sigdelset (sigset_t *set, int signo);
     int sigismember (const sigset_t *set, int signo); //Checking state
 
-int sigprocmask (int how, const sigset_t *newset, sigset_t *oldset); //Modify
+#### int sigprocmask (int how, const sigset_t *newset, sigset_t *oldset); //Modify
+
     SIG_SETMASK: signal mask của process sẽ bị thay đổi thành newset.
     SIG_BLOCK: newset sẽ được thêm vào signal mask (phép OR).
     SIG_UNBLOCK: newset sẽ bị xóa khỏi signal mask
